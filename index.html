@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Installation Complete</title>
+    <style>
+      body {
+        background-color: #343a40;
+        color: #f8f9fa;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      h1 {
+        font-weight: bold;
+      }
+      .theme-switch {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+      }
+      .theme-switch label {
+        display: inline-block;
+        margin-bottom: 0;
+        font-weight: 700;
+        cursor: pointer;
+        user-select: none;
+      }
+      .theme-switch input {
+        display: none;
+      }
+      .theme-switch input:checked + label:before {
+        content: '🌞';
+      }
+      .theme-switch input:not(:checked) + label:before {
+        content: '🌙';
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1>Installation Complete</h1>
+        <p>You have successfully installed and configured your installation.</p>
+      </div>
+    </div>
+    <div class="theme-switch">
+      <input type="checkbox" id="theme-switch" checked>
+      <label for="theme-switch"></label>
+    </div>
+    <script>
+      const themeSwitch = document.querySelector('#theme-switch');
+      const body = document.querySelector('body');
+      themeSwitch.addEventListener('change', () => {
+        body.classList.toggle('theme-dark');
+      });
+    </script>
+  </body>
+</html>
